@@ -5,14 +5,43 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
-    <title>Ping Pong</title>
+    <title>Pizza Time!</title>
   </head>
   <body>
     <div class="container" id="bodycontainer">
       <div class="jumbotron" id="header">
-        <h1>Pizza Time!</h1>
+        <h1>Pizza Time</h1>
       </div>
-      
+      <form class="form-group" id="orderform">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Please select a pizza size</h3>
+            <select class="form-control" id="sizeinput">
+             <option value="s">Small (8 inches)</option>
+             <option value="m" selected>Medium (10 inches)</option>
+             <option value="l">Large (12 inches)</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <h3>Please select your toppings</h3>
+            <input type="checkbox" name="topping" value="Extre Cheese">Extra Cheese<br>
+            <input type="checkbox" name="topping" value="Pepperoni">Pepperoni<br>
+            <input type="checkbox" name="topping" value="Sausage">Sausage<br>
+            <input type="checkbox" name="topping" value="Chicken">Chicken<br>
+            <input type="checkbox" name="topping" value="Mushrooms">Mushrooms<br>
+            <input type="checkbox" name="topping" value="Green Peppers">Green Peppers<br>
+            <input type="checkbox" name="topping" value="Pineapple">Pineapple<br>
+          </div>
+          <!-- <div class="col-md-4">
+            <h3>Please select your toppings</h3>
+          </div> -->
+        </div>
+        <button type="submit" class="btn btn-danger" id="orderbtn">Click here to submit order</button>
+      </form>
+      <div id="currentpizza">
+        <p>You have selected: </p>
+        
+      </div>
     </div>
   </body>
 </html>
