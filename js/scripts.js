@@ -22,15 +22,22 @@ Pizza.prototype.displayFunc = function(){
   this.toppings.forEach(function(topping) {
     displayText += topping + ', ';
   });
-  return this.toppingDisplay = displayText.slice(0, (displayText.length-2));
-  console.log(this.toppings);
+  return (this.toppingDisplay = displayText.slice(0, (displayText.length-2)));
+  // console.log(this.toppings);
 }
 
 Pizza.prototype.priceCalc = function() {
   // console.log(`${this.size} pizza, with ${this.checkedBoxes} toppings (${this.toppings})`)
   var sizePrice = 0;
-  var toppingPrice = 0;
-
+  if (this.size === "Small") {
+    sizePrice = 6;
+  } else if (this.size === "Medium") {
+    sizePrice = 8;
+  } else if (this.size === "Large") {
+    sizePrice = 10;
+  }
+  this.price = (sizePrice + this.checkedBoxes);
+  // console.log(this.price);
 }
 
 
@@ -51,10 +58,12 @@ $(document).ready(function(){
     // console.log(`${numChecks} checked boxes, toppings are ${toppings}, size is ${pizzaSize}`);
     var newPizza = new Pizza(pizzaSize, numChecks, toppings);
     newPizza.displayFunc();
+    newPizza.priceCalc();
     // console.log(newPizza.toppingDisplay);
     // console.log(newPizza);
     newOrder.tempOrder[0] = newPizza;
     // console.log(newOrder.tempOrder[0]);
+
   });
 
 });
