@@ -2,17 +2,27 @@
 // business logic for Pizza constructors
 
 function Order() {
+  this.tempOrder = [];
   this.orders = [];
 }
 
 var newOrder = new Order();
 
-function Pizza(size, toppings) {
+function Pizza(size, checkedBoxes, toppings) {
   this.size = size;
   this.toppings = toppings;
-  this.checked = 0;
+  this.checkedBoxes = checkedBoxes;
   this.toppingDisplay = '';
   this.price = 0;
+}
+
+Pizza.prototype.displayFunc = function(){
+  var displayText = '';
+  this.toppings.forEach(function(topping) {
+    displayText += topping + ', ';
+  });
+  return this.toppingDisplay = displayText;
+  console.log(this.toppings);
 }
 
 Pizza.prototype.priceCalc = function() {
@@ -34,7 +44,11 @@ $(document).ready(function(){
       numChecks ++;
     });
     var pizzaSize = $('#sizeinput').val();
-    console.log(`${numChecks} checked boxes, toppings are ${toppings}, size is ${pizzaSize}`);
+    // console.log(`${numChecks} checked boxes, toppings are ${toppings}, size is ${pizzaSize}`);
+    var newPizza = new Pizza(pizzaSize, numChecks, toppings);
+    // console.log(newPizza);
+    newOrder.tempOrder[0] = newPizza;
+    console.log(newOrder.tempOrder[0]);
   });
 
 });
