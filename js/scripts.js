@@ -12,6 +12,11 @@ function Pizza(size, toppings) {
   this.toppings = toppings;
   this.checked = 0;
   this.toppingDisplay = '';
+  this.price = 0;
+}
+
+Pizza.prototype.priceCalc = function() {
+  console.log(`${this.size} pizza, with ${this.checked} toppings (${this.toppings})`)
 }
 
 
@@ -29,7 +34,7 @@ $(document).ready(function(){
       numChecks ++;
     });
     var pizzaSize = $('#sizeinput').val();
-    // console.log(`${numChecks} checked boxes, toppings are ${toppings}, size is ${pizzaSize}`);
+    console.log(`${numChecks} checked boxes, toppings are ${toppings}, size is ${pizzaSize}`);
   });
 
 });
