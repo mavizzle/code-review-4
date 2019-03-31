@@ -44,6 +44,7 @@ Pizza.prototype.priceCalc = function() {
 // UI logic
 
 $(document).ready(function(){
+  $('.tempheader').hide();
 
   $('form#orderform').submit(function(event){
     event.preventDefault();
@@ -63,7 +64,10 @@ $(document).ready(function(){
     // console.log(newPizza);
     newOrder.tempOrder[0] = newPizza;
     // console.log(newOrder.tempOrder[0]);
-
+    $('#pizzasize').text(newOrder.tempOrder[0].size);
+    $('#toppings').text(newOrder.tempOrder[0].toppingDisplay);
+    $('#tempprice').text(newOrder.tempOrder[0].price);
+    $('.tempheader').show();
   });
 
 });
