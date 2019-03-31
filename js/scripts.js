@@ -45,6 +45,7 @@ Pizza.prototype.priceCalc = function() {
 
 $(document).ready(function(){
   $('.tempheader').hide();
+  $('#refreshbtn').hide();
 
   $('form#orderform').submit(function(event){
     event.preventDefault();
@@ -68,6 +69,16 @@ $(document).ready(function(){
     $('#toppings').text(newOrder.tempOrder[0].toppingDisplay);
     $('#tempprice').text(newOrder.tempOrder[0].price);
     $('.tempheader').show();
+    $('#orderbtn').hide();
+    $('#refreshbtn').show();
+    // $('toppingdiv').find('input[type=checkbox]:checked').removeAttr('checked');
+  });
+
+  $('#refreshbtn').click(function(event){
+
+    $('.tempheader').hide();
+    $('#refreshbtn').hide();
+    $('#orderbtn').show();
   });
 
 });

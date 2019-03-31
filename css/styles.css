@@ -1,3 +1,42 @@
 body {
   background-image: url(../img/pizza.jpg);
 }
+
+.rowdiv {
+  padding-bottom: 25px;
+  margin: auto;
+}
+
+.menudiv {
+  margin: auto;
+}
+
+#header {
+  text-align: center;
+  color: orange;
+  background-color: grey;
+}
+
+#orderbtn {
+  margin-top: 30px;
+}
+#bodycontainer {
+  background-color: white;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  text-align: center;
+}
+
+#toppingdiv {
+  max-width: 150px;
+  margin: auto;
+  text-align: left;
+}
+
+#currentpizza {
+  padding-bottom: 30px;
+}
+
+#refreshbtn {
+  margin-bottom: 30px;
+}

@@ -13,8 +13,8 @@
         <h1>Pizza Time</h1>
       </div>
       <form class="form-group" id="orderform">
-        <div class="row">
-          <div class="col-md-4">
+        <div class="row" id="rowdiv">
+          <div class="col-md-4 menudiv">
             <h3>Please select a pizza size</h3>
             <h5>Small pizza is $6, medium is $8, and large is $10.</h5>
             <select class="form-control" id="sizeinput">
@@ -23,15 +23,17 @@
              <option value="Large">Large (12 inches)</option>
             </select>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 menudiv">
             <h3>Please select your toppings ($1 per topping)</h3>
-            <input type="checkbox" name="topping" value="Extre Cheese">Extra Cheese<br>
-            <input type="checkbox" name="topping" value="Pepperoni">Pepperoni<br>
-            <input type="checkbox" name="topping" value="Sausage">Sausage<br>
-            <input type="checkbox" name="topping" value="Chicken">Chicken<br>
-            <input type="checkbox" name="topping" value="Mushrooms">Mushrooms<br>
-            <input type="checkbox" name="topping" value="Green Peppers">Green Peppers<br>
-            <input type="checkbox" name="topping" value="Pineapple">Pineapple<br>
+            <div id="toppingdiv">
+              <input type="checkbox" name="topping" value="Extre Cheese">Extra Cheese<br>
+              <input type="checkbox" name="topping" value="Pepperoni">Pepperoni<br>
+              <input type="checkbox" name="topping" value="Sausage">Sausage<br>
+              <input type="checkbox" name="topping" value="Chicken">Chicken<br>
+              <input type="checkbox" name="topping" value="Mushrooms">Mushrooms<br>
+              <input type="checkbox" name="topping" value="Green Peppers">Green Peppers<br>
+              <input type="checkbox" name="topping" value="Pineapple">Pineapple<br>
+            </div>
           </div>
           <!-- <div class="col-md-4">
             <h3>Please select your toppings</h3>
@@ -44,6 +46,7 @@
         <h4 class="tempheader">You have selected a <span id="pizzasize"></span> pizza with <span id="toppings"></span>.</h4>
         <h4 class="tempheader">Sub-total: $<span id="tempprice"></span></h4>
       </div>
+      <button type="button" class="btn btn-danger" id="refreshbtn">Click here to place a new order!</button>
       <!-- <div id="finalorder">
         <h2>My cart:</h2>
         <h4>A<span id="pizzasize"></span> pizza with <span id="toppings"></span>.</h4>
